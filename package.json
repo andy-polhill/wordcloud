@@ -1,0 +1,34 @@
+{
+  "name": "word-cloud",
+  "version": "0.0.0",
+  "description": "A basic word cloud",
+  "main": "word-cloud.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/thatguynamedandy/word-cloud"
+  },
+  "author": "apolhill",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/thatguynamedandy/word-cloud/issues"
+  },
+  "homepage": "https://github.com/thatguynamedandy/word-cloud",
+  "devDependencies": {
+    "karma": "~0.12.37",
+    "jasmine-core": "~2.3.4",
+    "karma-jasmine": "~0.3.5",
+    "karma-chrome-launcher": "~0.2.0",
+    "karma-firefox-launcher": "~0.1.6",
+    "karma-safari-launcher": "~0.1.1",
+    "gulp": "~3.9.0",
+    "gulp-babel": "~5.1.0",
+    "karma-babel-preprocessor": "~5.2.1",
+    "gulp-sourcemaps": "~1.5.2",
+    "gulp-concat": "~2.6.0",
+    "gulp-connect": "~2.2.0",
+    "run-sequence": "~1.1.1"
+  }
+}
