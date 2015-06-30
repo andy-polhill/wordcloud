@@ -7,7 +7,8 @@ var rimraf = require('rimraf');
 var runSequence = require('run-sequence');
 
 var config = {
-  scripts: 'lib/**/*.js'
+  scripts: 'lib/**/*.js',
+  css: 'css/**/*.css'
 }
 
 gulp.task('babel', function () {
@@ -33,7 +34,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', function (cb) {
-  gulp.watch(config.scripts, function() {
+  gulp.watch([config.scripts, config.css], function() {
     runSequence('clean','babel');
   });
 });

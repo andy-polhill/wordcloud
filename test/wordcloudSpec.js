@@ -6,16 +6,34 @@ describe('Wordcloud', function() {
   var topics = [
     {
       label: 'negative-1',
-      id: '1',
-      'sentimentScore': NEGATIVE_SENTIMENT_THRESHOLD - 1
+      id: 'a',
+      sentimentScore: NEGATIVE_SENTIMENT_THRESHOLD - 1,
+      volume: 20
     }, {
       label: 'positive-1',
-      id: '2',
-      'sentimentScore': POSITIVE_SENTIMENT_THRESHOLD + 1
+      id: 'b',
+      sentimentScore: POSITIVE_SENTIMENT_THRESHOLD + 1,
+      volume: 223
     }, {
       label: 'neutral-1',
-      id: '3',
-      'sentimentScore': NEGATIVE_SENTIMENT_THRESHOLD + 1
+      id: 'c',
+      sentimentScore: NEGATIVE_SENTIMENT_THRESHOLD + 1,
+      volume: 87
+    }, {
+      label: 'negative-2',
+      id: 'd',
+      sentimentScore: NEGATIVE_SENTIMENT_THRESHOLD - 1,
+      volume: 12
+    }, {
+      label: 'positive-2',
+      id: 'e',
+      sentimentScore: POSITIVE_SENTIMENT_THRESHOLD + 1,
+      volume: 109
+    }, {
+      label: 'neutral-2',
+      id: 'f',
+      sentimentScore: NEGATIVE_SENTIMENT_THRESHOLD + 1,
+      volume: 161
     }
   ];
 
@@ -55,7 +73,8 @@ describe('Wordcloud', function() {
     var topic1Node, topic2Node, topic3Node;
 
     beforeEach(function() {
-      new WordCloud(container, topics);
+      var copiedTopics = Object.assign([], topics);
+      new WordCloud(container, copiedTopics);
       topic1Node = container.querySelector('[uid="'+ topics[0].id +'"]');
       topic2Node = container.querySelector('[uid="'+ topics[1].id +'"]');
       topic3Node = container.querySelector('[uid="'+ topics[2].id +'"]');
@@ -76,6 +95,15 @@ describe('Wordcloud', function() {
       expect(topic2Node.getAttribute('class')).toContain(POSITIVE_STYLE);
       expect(topic3Node.getAttribute('class')).not.toContain(POSITIVE_STYLE);
       expect(topic3Node.getAttribute('class')).not.toContain(NEGATIVE_STYLE);
+    });
+
+    it('should apply larger text sizes to most popular topics', function() {
+      expect(parseInt(topic2Node.style.fontSize))
+        .toBeGreaterThan(parseInt(topic1Node.style.fontSize));
+      expect(parseInt(topic2Node.style.fontSize))
+        .toBeGreaterThan(parseInt(topic3Node.style.fontSize));
+      expect(parseInt(topic1Node.style.fontSize))
+        .toBeLessThan(parseInt(topic3Node.style.fontSize));
     });
 
   });

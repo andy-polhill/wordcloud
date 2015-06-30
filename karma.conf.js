@@ -17,7 +17,8 @@ module.exports = function(config) {
     files: [
       'lib/**/*.js',
       'test/**/*Spec.js',
-      'node_modules/snapsvg/dist/snap.svg-min.js'
+      'node_modules/snapsvg/dist/snap.svg-min.js',
+      'node_modules/karma-babel-preprocessor/node_modules/babel-core/browser-polyfill.js'
     ],
 
 
@@ -29,9 +30,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      "lib/**/*.js": ["babel"],
+      'lib/**/*.js': ['babel'],
+      'test/**/*Spec.js': ['babel']
     },
 
+    babelPreprocessor: {
+      options: {
+        sourceMap: 'inline'
+      },
+      filename: function (file) {
+        return file.originalPath.replace(/\.js$/, '.es5.js');
+      },
+      sourceFileName: function (file) {
+        return file.originalPath;
+      }
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
