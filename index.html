@@ -8,8 +8,11 @@
 </head>
 
 <body>
-  <div id='wordcloud'></div>
-  <script src='./dist/all.js'></script>
+  <div class='wrapper'>
+    <div class='wordcloud'></div>
+  </div>
+  <script src='./node_modules/snapsvg/dist/snap.svg-min.js'></script>
+  <script src='./dist/wordcloud.js'></script>
   <script>
     //TODO: Use a module loader
     var data = {
@@ -1805,7 +1808,7 @@
     }
 
 
-    new WordCloud(document.getElementById('wordcloud'), data);
+    new WordCloud(document.querySelector('.wordcloud'), data.topics);
   </script>
 </body>
 </html>

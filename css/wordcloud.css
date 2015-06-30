@@ -1,5 +1,28 @@
-#wordcloud {
-  width:600px;
-  height:400px;
-  background-color:beige;
+.wrapper {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+.wrapper:after {
+  padding-top: 56.25%;   /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.wordcloud {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: deepskyblue;
+  color: white;
+}
+text {
+  fill:gray;
+}
+text.positive {
+  fill:green;
+}
+text.negative {
+  fill:red;
 }

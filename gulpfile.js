@@ -3,17 +3,25 @@ var sourcemaps = require('gulp-sourcemaps');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
 var connect = require('gulp-connect');
+var rimraf = require('rimraf');
 var runSequence = require('run-sequence');
 
-gulp.task('babel', function () {
-  return gulp.src('src/**/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(concat('all.js'))
-    .pipe(babel({
+var config = {
+  scripts: 'lib/**/*.js'
+}
 
-    }))
+gulp.task('babel', function () {
+  return gulp.src(config.scripts)
+    .pipe(sourcemaps.init())
+    .pipe(concat('wordcloud.js'))
+    .pipe(babel({}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
+    .pipe(connect.reload())
+});
+
+gulp.task('clean', function (cb) {
+  rimraf('./dist', cb);
 });
 
 gulp.task('connect', function() {
@@ -24,6 +32,12 @@ gulp.task('connect', function() {
   });
 });
 
+gulp.task('watch', function (cb) {
+  gulp.watch(config.scripts, function() {
+    runSequence('clean','babel');
+  });
+});
+
 gulp.task('default', function() {
-  runSequence('babel', 'connect')
+  runSequence('clean', 'babel', 'connect', 'watch')
 });

@@ -15,8 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/**/*.js',
-      'test/**/*Spec.js'
+      'lib/**/*.js',
+      'test/**/*Spec.js',
+      'node_modules/snapsvg/dist/snap.svg-min.js'
     ],
 
 
@@ -28,7 +29,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      "src/**/*.js": ["babel"],
+      "lib/**/*.js": ["babel"],
     },
 
 
