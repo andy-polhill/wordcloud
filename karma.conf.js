@@ -17,7 +17,6 @@ module.exports = function(config) {
     files: [
       'lib/**/*.js',
       'test/**/*Spec.js',
-      'node_modules/snapsvg/dist/snap.svg-min.js',
       'node_modules/karma-babel-preprocessor/node_modules/babel-core/browser-polyfill.js'
     ],
 

@@ -70,14 +70,14 @@ describe('Wordcloud', function() {
 
   describe('Cloud creation', function() {
 
-    var topic1Node, topic2Node, topic3Node;
+    var topic1Node, topic2Node, topic3Node, wordCloud;
 
     beforeEach(function() {
       var copiedTopics = Object.assign([], topics);
-      new WordCloud(container, copiedTopics);
-      topic1Node = container.querySelector('[uid="'+ topics[0].id +'"]');
-      topic2Node = container.querySelector('[uid="'+ topics[1].id +'"]');
-      topic3Node = container.querySelector('[uid="'+ topics[2].id +'"]');
+      wordCloud = new WordCloud(container, copiedTopics);
+      topic1Node = container.querySelector('[uid='+ topics[0].id +']');
+      topic2Node = container.querySelector('[uid='+ topics[1].id +']');
+      topic3Node = container.querySelector('[uid='+ topics[2].id +']');
     });
 
     it('should create a text element for each topic', function() {
@@ -106,6 +106,16 @@ describe('Wordcloud', function() {
         .toBeLessThan(parseInt(topic3Node.style.fontSize));
     });
 
+    it('should trigger an event when a tag is clicked', function() {
+      var eventSpy = jasmine.createSpy();
+      document.addEventListener(TOPIC_SELECT_EVENT, eventSpy);
+      var event = new Event('click', { 'bubbles': true, 'cancelable': false });
+      wordCloud.container.dispatchEvent(event);
+      topic1Node.dispatchEvent(event);
+      expect(eventSpy).toHaveBeenCalled();
+      expect(eventSpy).toHaveBeenCalledWith(jasmine.objectContaining({
+        detail: topics[0]
+      }));
+    });
   });
-
 });
