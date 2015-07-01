@@ -4,6 +4,7 @@
 <head>
   <meta charset='utf-8'>
   <title>Word cloud</title>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:700|Merriweather' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='css/wordcloud.css'>
 </head>
 
@@ -24,15 +25,15 @@
       </dl>
       <dl>
         <dt>Positive mentions</dt>
-        <dd>{{sentiment.positive}}</dd>
+        <dd class='positive'>{{sentiment.positive}}</dd>
       </dl>
       <dl>
         <dt>Neutral mentions</dt>
-        <dd>{{sentiment.neutral}}</dd>
+        <dd class='neutral'>{{sentiment.neutral}}</dd>
       </dl>
       <dl>
         <dt>Negative mentions</dt>
-        <dd>{{sentiment.negative}}</dd>
+        <dd class='negative'>{{sentiment.negative}}</dd>
       </dl>
     </div>
   </script>
