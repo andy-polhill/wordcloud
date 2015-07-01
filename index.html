@@ -4,38 +4,37 @@
 <head>
   <meta charset='utf-8'>
   <title>Word cloud</title>
-  <link href='http://fonts.googleapis.com/css?family=Oswald:700|Merriweather' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cantarell:400,700|Fjalla+One' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='css/wordcloud.css'>
 </head>
 
 <body>
-  <div class='wrapper'>
+  <div class='wordcloud-wrapper'>
     <div class='wordcloud'></div>
   </div>
-  <div class='metadata'>
-
+  <div class='metadata-wrapper'>
+    <div class='metadata'></div>
   </div>
-
   <script type='text/template' id='meta-template'>
-    <div>
-      <h3>{{label}}</h3>
-      <dl>
-        <dt>Total mentions</dt>
-        <dd>{{volume}}</dd>
+    <h3><span class="label">Topic: </span>{{label}}</h3>
+    <table>
+      <tr class='bold'>
+        <td>Total mentions</td>
+        <td>{{volume}}</td>
+      </tr>
+      <tr>
+        <td>Positive mentions</td>
+        <td class='positive bold'>{{sentiment.positive}}</td>
+      </tr>
+      <tr>
+        <td>Neutral mentions</td>
+        <td class='neutral bold'>{{sentiment.neutral}}</td>
       </dl>
-      <dl>
-        <dt>Positive mentions</dt>
-        <dd class='positive'>{{sentiment.positive}}</dd>
-      </dl>
-      <dl>
-        <dt>Neutral mentions</dt>
-        <dd class='neutral'>{{sentiment.neutral}}</dd>
-      </dl>
-      <dl>
-        <dt>Negative mentions</dt>
-        <dd class='negative'>{{sentiment.negative}}</dd>
-      </dl>
-    </div>
+      <tr>
+        <td>Negative mentions</td>
+        <td class='negative bold'>{{sentiment.negative}}</td>
+      </tr>
+    </table>
   </script>
 
   <script src='./dist/wordcloud.js'></script>

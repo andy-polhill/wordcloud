@@ -1,15 +1,31 @@
 body {
-  font-family: 'Merriweather', serif;
+  font-family: 'Cantarell', serif;
+  font-size:14px;
 }
-.wrapper {
-  width: 100%;
+.bold {
+  font-weight:bold;
+}
+.label {
+  font-size:0.75em;
+  font-weight:normal;
+}
+.metadata-wrapper {
+  width:30%;
+  float:right;
+}
+.wordcloud-wrapper {
+  width: 70%;
+  float:left;
   display: inline-block;
   position: relative;
 }
-.wrapper:after {
+.wordcloud-wrapper:after {
   padding-top: 56.25%;   /* 16:9 ratio */
   display: block;
   content: '';
+}
+.metadata {
+  padding:10px;
 }
 .wordcloud {
   position: absolute;
@@ -17,20 +33,23 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: beige;
+  background-color: #D4CDAD;
   color: white;
-  font-family:Arial, Helvetica, sans-serif;
 }
 text {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
+  fill:gray;
+  cursor:pointer;
+}
+.positive {
+  fill:#25857D;
+  color:#25857D;
+}
+.neutral {
   fill:gray;
   color:gray;
 }
-.positive {
-  fill:green;
-  color:green;
-}
 .negative {
-  fill:red;
-  color:red;
+  fill:#942222;
+  color:#942222;
 }
