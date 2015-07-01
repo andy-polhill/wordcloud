@@ -13,7 +13,6 @@
   * Template precompilation
   * Check for collision before rendering (performance)
   * Determine what to do on conainer bounds collision
-  * Where to put constants (no static constants)
   * See if multiple repaints can be avoided
   * Change default aspect ratio to be more word friendly
   * Check older browsers

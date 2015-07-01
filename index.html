@@ -41,6 +41,7 @@
   <script src='./node_modules/babel-core/browser-polyfill.js'></script>
   <script src='./node_modules/hogan.js/dist/hogan-3.0.2.js'></script>
   <script>
+    const TOPIC_SELECT_EVENT = 'topic:selected';
     new WordCloud(document.querySelector('.wordcloud'), TOPICS);
     new MetadataView(document.querySelector('.metadata'));
   </script>
