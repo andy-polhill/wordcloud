@@ -5,7 +5,6 @@ var concat = require('gulp-concat');
 var connect = require('gulp-connect');
 var rimraf = require('rimraf');
 var runSequence = require('run-sequence');
-var compiler = require('gulp-hogan-compile');
 
 var config = {
   scripts: 'lib/**/*.js',
@@ -37,29 +36,12 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('templates', function() {
-  gulp.src(config.templates)
-    .pipe(compiler('templates.js'))
-    .pipe(gulp.dest(config.dist));
-});
-
 gulp.task('watch', function() {
   gulp.watch([config.scripts, config.css], function() {
-    runSequence('clean', 'templates', 'babel');
+    runSequence('clean', 'babel');
   });
 });
 
-/*gulp.task('modules', function() {
-  browserify({
-    entries: config.dist + '/wordcloud.js',
-    debug: true
-  })
-  .transform(babelify)
-  .bundle()
-  .pipe(source('output.js'))
-  .pipe(gulp.dest(config.dist));
-});*/
-
 gulp.task('default', function() {
-  runSequence('clean', 'templates', 'babel', 'connect', 'watch');
+  runSequence('clean', 'babel', 'connect', 'watch');
 });
