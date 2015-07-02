@@ -37,11 +37,14 @@
     </table>
   </script>
 
+  <!--[if gte IE 9]>
+    <script src='./node_modules/custom-event-polyfill/custom-event-polyfill.js'></script>
+  <![endif]-->
   <script src='./dist/wordcloud.js'></script>
   <script src='./node_modules/babel-core/browser-polyfill.min.js'></script>
   <script src='./node_modules/hogan.js/dist/hogan-3.0.2.js'></script>
   <script>
-    const TOPIC_SELECT_EVENT = 'topic:selected';
+    var TOPIC_SELECT_EVENT = 'topic:selected';
     new WordCloud(document.querySelector('.wordcloud'), TOPICS);
     new MetadataView(document.querySelector('.metadata'),
         document.getElementById(MetadataView.META_TEMPLATE_ID).textContent);

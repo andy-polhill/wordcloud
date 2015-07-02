@@ -17,12 +17,15 @@
   },
   "homepage": "https://github.com/thatguynamedandy/word-cloud",
   "devDependencies": {
+    "babel-core": "~5.6.15",
+    "custom-event-polyfill": "^0.2.1",
     "gulp": "~3.9.0",
     "gulp-babel": "~5.1.0",
     "gulp-concat": "~2.6.0",
     "gulp-connect": "~2.2.0",
     "gulp-hogan-compile": "^0.4.1",
     "gulp-sourcemaps": "~1.5.2",
+    "hogan.js": "~3.0.2",
     "jasmine-core": "~2.3.4",
     "karma": "~0.12.37",
     "karma-babel-preprocessor": "~5.2.1",
@@ -31,8 +34,6 @@
     "karma-jasmine": "~0.3.5",
     "karma-safari-launcher": "~0.1.1",
     "rimraf": "^2.4.0",
-    "run-sequence": "~1.1.1",
-    "babel-core": "~5.6.15",
-    "hogan.js": "~3.0.2"
+    "run-sequence": "~1.1.1"
   }
 }
