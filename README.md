@@ -25,5 +25,6 @@ A basic word cloud implementation, Using some ES6 syntax via Babel preprocessor,
     * One alternative may be to predict text size and location
   * Deal with collision to container bounds
   * Improve test coverage
+  * Make a Base wordcloud class that is polymorphic and then create a Browser/Server extension of the class
 
 _Not currently what I would define as "production ready", but I'm running out of time to burn on it._
