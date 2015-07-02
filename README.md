@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/thatguynamedandy/wordcloud.svg)](https://travis-ci.org/thatguynamedandy/wordcloud)
+
+#Intro
+A basic word cloud implementation, Using some ES6 syntax via Babel preprocessor, and templating wih Hogan.
+
 #Installation
 
     npm install
@@ -6,7 +11,7 @@
 
 #Tests
 
-    karma start
+    npm test
 
 #Demo
 
@@ -17,6 +22,7 @@
   * Template precompilation
   * Find out if there is a way to determine tag location before appending to the DOM
     * This will help with performance and cut down on repaints
+    * One alternative may be to predict text size and location
   * Deal with collision to container bounds
   * Improve test coverage
 

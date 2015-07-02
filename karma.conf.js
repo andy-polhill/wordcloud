@@ -17,7 +17,7 @@ module.exports = function(config) {
     files: [
       'lib/**/*.js',
       'test/**/*Spec.js',
-      'node_modules/babel-core/browser-polyfill.js',
+      'node_modules/babel-core/browser-polyfill.js'
     ],
 
 
@@ -70,7 +70,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],// 'Firefox', 'Safari'],
+    browsers: ['Chrome', 'Firefox', 'Safari'],
 
 
     // Continuous Integration mode
