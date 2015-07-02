@@ -1019,8 +1019,8 @@ var TOPICS = [{
         'volume': 6
     }]
 }, {
-    'id': '1751295897__Patrick GrÃ¤ser',
-    'label': 'Patrick GrÃ¤ser',
+    'id': '1751295897__Patrick Gräser',
+    'label': 'Patrick Gräser',
     'volume': 6,
     'type': 'topic',
     'sentiment': {
