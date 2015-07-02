@@ -4,7 +4,7 @@
   "description": "A basic word cloud",
   "main": "word-cloud.js",
   "scripts": {
-    "test": "karma start"
+    "test": "./node_modules/.bin/karma start --browsers Firefox --single-run"
   },
   "repository": {
     "type": "git",
