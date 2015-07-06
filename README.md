@@ -28,5 +28,6 @@ A basic word cloud implementation, Using some ES6 syntax via Babel preprocessor,
   * Make a Base wordcloud class that is polymorphic and then create a Browser/Server extension of the class
   * Create a minified version of compiled scripts 
   * Get rid of the global event and pass through as an option
+  * Use JSCS and JSHINT checkers (currently unable to set up on work machine)
 
 _Not currently what I would define as "production ready", but I'm running out of time to burn on it._
